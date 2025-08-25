@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTubeGold - Plataforma de Optimización de YouTube</title>
+    <meta name="description" content="La herramienta más poderosa para hacer crecer tu canal de YouTube y multiplicar tus ingresos">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fab fa-youtube"></i>
+                <span>YouTubeGold</span>
+            </div>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <button id="install-app" class="install-btn" style="display: none;">
+                    <i class="fas fa-download"></i>
+                    Instalar
+                </button>
+                <div class="earnings-counter">
+                    <span>Ganado: </span>
+                    <span id="earnings-display">$0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Theme Selector -->
+    <div id="theme-selector" class="theme-selector hidden">
+        <div class="theme-options">
+            <div class="theme-option" data-theme="red">
+                <div class="theme-preview theme-red"></div>
+                <span>Rojo Clásico</span>
+            </div>
+            <div class="theme-option" data-theme="dark">
+                <div class="theme-preview theme-dark"></div>
+                <span>Dark Mode</span>
+            </div>
+            <div class="theme-option" data-theme="blue">
+                <div class="theme-preview theme-blue"></div>
+                <span>Azul Pro</span>
+            </div>
+            <div class="theme-option" data-theme="purple">
+                <div class="theme-preview theme-purple"></div>
+                <span>Morado Creator</span>
+            </div>
+            <div class="theme-option" data-theme="green">
+                <div class="theme-preview theme-green"></div>
+                <span>Verde Money</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Domina YouTube y 
+                <span class="highlight">Multiplica tus Ingresos</span>
+            </h1>
+            <p class="hero-subtitle">
+                La plataforma más avanzada para optimizar tu canal y generar más dinero
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">+2,847%</div>
+                    <div class="stat-label">Aumento en Views</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$127K+</div>
+                    <div class="stat-label">Generados por usuarios</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">97%</div>
+                    <div class="stat-label">Tasa de éxito</div>
+                </div>
+            </div>
+            <button class="hero-cta" onclick="scrollToTools()">
+                <i class="fas fa-rocket"></i>
+                Empezar Gratis
+            </button>
+        </div>
+    </section>
+
+    <!-- Tools Grid -->
+    <section class="tools-section" id="tools">
+        <h2 class="section-title">Herramientas Profesionales</h2>
+        <div class="tools-grid">
+            <!-- Keyword Research -->
+            <div class="tool-card popular" data-tool="keyword-research">
+                <div class="tool-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Keyword Research IA</h3>
+                <p>Encuentra las palabras clave que generan millones de views</p>
+                <div class="tool-tag">Más Popular</div>
+                <button class="tool-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    Usar Herramienta
+                </button>
+            </div>
+
+            <!-- Title Optimizer -->
+            <div class="tool-card" data-tool="title-optimizer">
+                <div class="tool-icon">
+                    <i class="fas fa-magic"></i>
+                </div>
+                <h3>Optimizador de Títulos</h3>
+                <p>Títulos irresistibles que garantizan más clics</p>
+                <button class="tool-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    Usar Herramienta
+                </button>
+            </div>
+
+            <!-- Thumbnail Analyzer -->
+            <div class="tool-card" data-tool="thumbnail-analyzer">
+                <div class="tool-icon">
+                    <i class="fas fa-image"></i>
+                </div>
+                <h3>Analizador de Miniaturas</h3>
+                <p>Descubre qué thumbnails generan más clics</p>
+                <button class="tool-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    Usar Herramienta
+                </button>
+            </div>
+
+            <!-- Trending Topics -->
+            <div class="tool-card hot" data-tool="trending-topics">
+                <div class="tool-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <h3>Temas Trending</h3>
+                <p>Descubre qué está viral ahora mismo</p>
+                <div class="tool-tag hot-tag">🔥 Hot</div>
+                <button class="tool-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    Usar Herramienta
+                </button>
+            </div>
+
+            <!-- Competitor Spy -->
+            <div class="tool-card" data-tool="competitor-spy">
+                <div class="tool-icon">
+                    <i class="fas fa-user-secret"></i>
+                </div>
+                <h3>Espía de Competencia</h3>
+                <p>Roba las estrategias de los canales exitosos</p>
+                <button class="tool-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    Usar Herramienta
+                </button>
+            </div>
+
+            <!-- Revenue Calculator -->
+            <div class="tool-card" data-tool="revenue-calculator">
+                <div class="tool-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3>Calculadora de Ingresos</h3>
+                <p>Predice cuánto ganarás con cada video</p>
+                <button class="tool-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    Usar Herramienta
+                </button>
+            </div>
+
+            <!-- AI Assistant -->
+            <div class="tool-card ai-powered" data-tool="ai-assistant">
+                <div class="tool-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Asistente IA</h3>
+                <p>Análisis completo de tu canal con inteligencia artificial</p>
+                <div class="tool-tag ai-tag">IA</div>
+                <button class="tool-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    Usar Herramienta
+                </button>
+            </div>
+
+            <!-- Voice Optimizer -->
+            <div class="tool-card ai-powered" data-tool="voice-optimizer">
+                <div class="tool-icon">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <h3>Optimizador de Voz IA</h3>
+                <p>Mejora tu forma de hablar para mayor retención</p>
+                <div class="tool-tag ai-tag">IA</div>
+                <button class="tool-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    Usar Herramienta
+                </button>
+            </div>
+
+            <!-- Trend Predictor -->
+            <div class="tool-card ai-powered premium" data-tool="trend-predictor">
+                <div class="tool-icon">
+                    <i class="fas fa-crystal-ball"></i>
+                </div>
+                <h3>Predictor de Tendencias</h3>
+                <p>IA predice qué será viral en el futuro</p>
+                <div class="tool-tag premium-tag">PRO</div>
+                <button class="tool-btn">
+                    <i class="fas fa-crown"></i>
+                    Upgrade Pro
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workspace -->
+    <section class="workspace hidden" id="workspace">
+        <div class="workspace-header">
+            <h2 id="workspace-title">Herramienta Activa</h2>
+            <button id="close-workspace" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="workspace-content">
+            <div class="input-panel">
+                <div class="form-group">
+                    <label for="channel-topic">Tema de tu Canal:</label>
+                    <input type="text" id="channel-topic" placeholder="Ej: Gaming, Tech, Cocina, Fitness...">
+                </div>
+                <div class="form-group">
+                    <label for="video-topic">Tema del Video:</label>
+                    <input type="text" id="video-topic" placeholder="Ej: Review iPhone 15, Receta pasta, Rutina gym...">
+                </div>
+                <div class="form-group">
+                    <label for="target-audience">Audiencia Objetivo:</label>
+                    <select id="target-audience">
+                        <option value="general">Audiencia General</option>
+                        <option value="teens">Adolescentes (13-19)</option>
+                        <option value="adults">Adultos (20-35)</option>
+                        <option value="mature">Adultos (35+)</option>
+                    </select>
+                </div>
+                <button id="generate-content" class="generate-btn">
+                    <i class="fas fa-magic"></i>
+                    Generar Optimización
+                </button>
+            </div>
+            <div class="results-panel">
+                <div class="results-header">
+                    <h3>Resultados de Optimización</h3>
+                    <div class="results-actions">
+                        <button id="copy-results" class="action-btn">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button id="save-results" class="action-btn">
+                            <i class="fas fa-save"></i>
+                        </button>
+                        <button id="export-results" class="action-btn premium">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="results-content" class="results-content">
+                    <div class="empty-state">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>Tus resultados aparecerán aquí</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="testimonials">
+        <h2 class="section-title">Casos de Éxito</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="testimonial-content">
+                    <p>"Pasé de 500 views a 50K+ por video en solo 2 meses"</p>
+                    <div class="testimonial-author">
+                        <strong>TechMaster2024</strong>
+                        <span>Canal de Tecnología</span>
+                    </div>
+                    <div class="testimonial-stats">
+                        <span class="stat-badge success">+9,900% views</span>
+                        <span class="stat-badge earnings">$4,200/mes extra</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="testimonial-content">
+                    <p>"Mis títulos optimizados ahora generan 8x más clics"</p>
+                    <div class="testimonial-author">
+                        <strong>CocinaFácil</strong>
+                        <span>Canal de Recetas</span>
+                    </div>
+                    <div class="testimonial-stats">
+                        <span class="stat-badge success">+700% CTR</span>
+                        <span class="stat-badge earnings">$2,800/mes extra</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="testimonial-content">
+                    <p>"Encontré mi nicho perfecto y ahora tengo 200K subs"</p>
+                    <div class="testimonial-author">
+                        <strong>FitnessKing</strong>
+                        <span>Canal de Fitness</span>
+                    </div>
+                    <div class="testimonial-stats">
+                        <span class="stat-badge success">+40,000% subs</span>
+                        <span class="stat-badge earnings">$8,500/mes extra</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Counter -->
+    <div class="usage-tracker">
+        <div class="usage-info">
+            <span>Optimizaciones gratuitas restantes:</span>
+            <span id="usage-count" class="usage-number">3</span>
+        </div>
+        <div class="usage-bar">
+            <div id="usage-fill" class="usage-fill" style="width: 100%"></div>
+        </div>
+        <p class="upgrade-hint">
+            <i class="fas fa-crown"></i>
+            Con Pro: Optimizaciones ilimitadas + Herramientas IA avanzadas
+        </p>
+    </div>
+
+    <!-- Premium Modal -->
+    <div id="premium-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-crown"></i> YouTubeGold Pro</h2>
+                <button id="close-premium" class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-subtitle">Únete a los YouTubers que generan 6 cifras</p>
+                <div class="pricing-plans">
+                    <div class="plan-card recommended">
+                        <div class="plan-badge">Recomendado</div>
+                        <h3>YouTuber Pro</h3>
+                        <div class="plan-price">
+                            <span class="price">$97</span>
+                            <span class="period">/mes</span>
+                        </div>
+                        <div class="roi-badge">ROI promedio: +2,400%</div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Optimizaciones ilimitadas</li>
+                            <li><i class="fas fa-check"></i> Todas las herramientas IA</li>
+                            <li><i class="fas fa-check"></i> Análisis de competencia</li>
+                            <li><i class="fas fa-check"></i> Predictor de ingresos</li>
+                            <li><i class="fas fa-check"></i> Soporte prioritario</li>
+                            <li><i class="fas fa-check"></i> Exportar resultados</li>
+                        </ul>
+                        <button class="plan-btn primary">
+                            Empezar Ahora
+                        </button>
+                        <div class="guarantee">
+                            💰 Garantía de 30 días o te devolvemos el dinero
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-mini">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"YouTubeGold me cambió la vida. Ahora genero $12K/mes con mi canal"</p>
+                    <strong>- Carlos Mendez, 1.2M suscriptores</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="loading-spinner">
+                <i class="fas fa-magic fa-spin"></i>
+            </div>
+            <h3>Optimizando con IA...</h3>
+            <p id="loading-message">Analizando tu contenido...</p>
+            <div class="loading-progress">
+                <div id="loading-bar" class="loading-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notifications" class="notifications-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
